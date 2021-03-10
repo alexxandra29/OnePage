@@ -1,0 +1,244 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family:Times, Times New Roman, serif;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-title{
+    font-size: 4rem;
+ font-weight: 300;
+ color:black;
+ margin-bottom: 10px;
+ text-transform: uppercase;
+ letter-spacing: .3rem;
+ text-align: center;
+}
+/* 1section*/
+#hero{
+background-image: url(./images/fundal.png);
+background-size: cover;
+background-position: top center;
+position: relative;
+z-index: 1;
+
+}
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(131, 127, 136);
+    opacity: .5;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0 50 px;
+    justify-content: flex-start;
+}
+#hero h1{
+    display: block;
+    position: relative;
+    width: fit-content;
+    font-size: 4rem;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+    animation:text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+#hero h1 span{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: blueviolet;
+    animation: text_reveal_box .5s ease;
+    animation-delay: .3s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#hero .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color:white;
+    background-color: transparent;
+    border: 2px solid blueviolet;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease-in;
+    transition-property: background-color,color;
+
+}
+
+#hero .cta:hover{
+    color: white;
+    background-color: blueviolet;
+}
+/* end 1section*/
+
+/* social section*/
+
+#social .social{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#social .section-title{
+    font-size: 4rem;
+ font-weight: 300;
+ color:black;
+ margin-bottom: 10px;
+ text-transform: uppercase;
+ letter-spacing: .3rem;
+ text-align: center;
+}
+#social .social-top p{
+    font-size: 1.5rem;
+    margin-top: 5px;
+    line-height: 3rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+
+}
+/* end social section*/
+
+/*projects*/
+#projects .projects{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#projects .projects-header h1{
+    margin-bottom: 50px;
+}
+#projects .all-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#projects .projects-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#projects .project-info{
+    padding: 30px;
+    flex-basis:50% ;
+    background-image:linear-gradient(90deg, rgb(86, 167, 162) 6%, rgb(150, 123, 144) 56%, rgb(48, 151, 112) 100%);
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+}
+#projects .project-img{
+    flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+    
+}
+#projects .project-img:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: .4;
+}
+#projects .project-img img {
+	transition: .3s ease transform;
+}
+#projects .project-item:hover .project-img img {
+	transform: scale(1.1);
+}
+#projects .project-info h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+#projects .project-info h2{
+    font-style: 1.8rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+#projects .project-info p{
+    font-weight: 700;
+}
+
+
+/* end projects*/
+@keyframes  text_reveal_box{
+   50%{
+       width: 100%;
+       left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color: rgb(44, 19, 68);
+        font-weight: 500px;
+    }
+}
